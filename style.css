@@ -260,6 +260,7 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
+  padding-inline: 32px;
 }
 
 .header-logo {
@@ -268,6 +269,7 @@ a:hover {
 
 .header-menu-list {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 50px;
 }
 
@@ -298,9 +300,65 @@ a:hover {
 
 .header-burger-button {
   display: inline-flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  row-gap: 4px;
   width: 40px;
-  height: 40px;
+  aspect-ratio: 1;
+  padding-left: 8px;
+  color: var(--color-light);
   background-color: transparent;
+  border: var(--border);
+  border-radius: 50%;
+}
+
+.header-burger-button:hover {
+  color: var(--color-light-gray);
+  border-color: currentColor;
+}
+
+.header-burger-button-line {
+  width: 6px;
+  height: 1px;
+  background-color: currentColor;
+  box-shadow: 16px 0 0 currentColor;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    padding-top: 20px;
+    row-gap: 10px;
+    padding-inline: 15px;
+  }
+  .header-menu {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .header-menu-link {
+    height: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 10px;
+  }
+
+  .header-menu-list {
+    column-gap: 24px;
+  }
+
+  .header-menu-link {
+    height: 32px;
+  }
+
+  .header-actions {
+    column-gap: 15px;
+  }
+
+  .button {
+    padding-inline: 18px;
+  }
 }
